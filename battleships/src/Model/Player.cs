@@ -23,7 +23,6 @@ namespace BattleShip
         protected static Random _Random = new Random();
 
         private Dictionary<ShipName, Ship> _Ships = new Dictionary<ShipName, Ship>();
-        private SeaGrid _playerGrid = new SeaGrid(_Ships);
         private ISeaGrid _enemyGrid;
         protected BattleShipsGame _game;
 
@@ -96,7 +95,7 @@ namespace BattleShip
         {
             get
             {
-                return _playerGrid;
+                return PlayerGrid1;
             }
         }
 
@@ -107,7 +106,7 @@ namespace BattleShip
         {
             get
             {
-                return _playerGrid.AllDeployed;
+                return PlayerGrid1.AllDeployed;
             }
         }
 
@@ -116,7 +115,7 @@ namespace BattleShip
             get
             {
                 // Check if all ships are destroyed... -1 for the none ship
-                return _playerGrid.ShipsKilled == Enum.GetValues(typeof(ShipName)).Length - 1;
+                return PlayerGrid1.ShipsKilled == Enum.GetValues(typeof(ShipName)).Length - 1;
             }
         }
 
@@ -183,6 +182,8 @@ namespace BattleShip
             }
         }
 
+        public SeaGrid PlayerGrid1 { get; set; } = new SeaGrid(_Ships);
+
         /// <summary>
         ///     ''' Makes it possible to enumerate over the ships the player
         ///     ''' has.
@@ -236,14 +237,14 @@ namespace BattleShip
 
             switch (result.Value)
             {
-                case object _ when ResultOfAttack.Destroyed:
-                case object _ when ResultOfAttack.Hit:
+                case ResultOfAttack.Destroyed:
+                case ResultOfAttack.Hit:
                     {
                         _hits += 1;
                         break;
                     }
 
-                case object _ when ResultOfAttack.Miss:
+                case ResultOfAttack.Miss:
                     {
                         _misses += 1;
                         break;

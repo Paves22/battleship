@@ -199,25 +199,25 @@ namespace BattleShip
         {
             switch (result.Value)
             {
-                case object _ when ResultOfAttack.Miss:
+                case ResultOfAttack.Miss:
                     {
                         _CurrentTarget = null;
                         break;
                     }
 
-                case object _ when ResultOfAttack.Hit:
+                case ResultOfAttack.Hit:
                     {
                         ProcessHit(row, col);
                         break;
                     }
 
-                case object _ when ResultOfAttack.Destroyed:
+                case ResultOfAttack.Destroyed:
                     {
                         ProcessDestroy(row, col, result.Ship);
                         break;
                     }
 
-                case object _ when ResultOfAttack.ShotAlready:
+                case ResultOfAttack.ShotAlready:
                     {
                         throw new ApplicationException("Error in AI");
                         break;

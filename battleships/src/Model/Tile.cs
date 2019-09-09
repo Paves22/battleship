@@ -44,7 +44,7 @@ namespace BattleShip
             get
             {
                 return _ColumnValue;
-            }s
+            }
         }
 
         public Ship Ship
@@ -58,7 +58,8 @@ namespace BattleShip
                 if ((_Ship == null))
                 {
                     _Ship = value;
-                    if (value)
+                    //May need to be fixed
+                    if (value.IsDeployed)
                     {
                         //IsNot;
                         //null;
@@ -136,6 +137,7 @@ namespace BattleShip
             if ((false == Shot))
             {
                 Shot = true;
+                //Fix
                 if (_Ship)
                 {
                     //IsNot;

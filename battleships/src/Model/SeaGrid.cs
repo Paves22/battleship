@@ -22,12 +22,19 @@ namespace BattleShip
         private Dictionary<ShipName, Ship> _Ships;
 
         private int _ShipsKilled = 0;
+        private Dictionary<ShipName, Ship> ships;
+
+        public SeaGrid(Dictionary<ShipName, Ship> ships)
+        {
+            this.ships = ships;
+        }
 
         private 
 
         // '' <summary>
         // '' The sea grid has changed and should be redrawn.
         // '' </summary>
+       
         public event EventHandler Changed;
 
         // '' <summary>
@@ -59,9 +66,11 @@ namespace BattleShip
             }
         }
 
-        public TileView this[int x, int y]
-        {
-        }
+        //public TileView this[int x, int y]
+        //{
+        //}
+
+        
 
         //Endclass Unknown
         //{
@@ -88,7 +97,9 @@ namespace BattleShip
             }
         }
 
-        public DummyClass(Dictionary<ShipName, Ship> ships)
+        public TileView Item => throw new NotImplementedException();
+
+        public void DummyClass(Dictionary<ShipName, Ship> ships)
         {
             // fill array with empty Tiles
             int i;
