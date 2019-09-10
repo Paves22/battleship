@@ -95,7 +95,7 @@ namespace BattleShip
         {
             get
             {
-                return PlayerGrid1;
+                return PlayerGrid;
             }
         }
 
@@ -106,7 +106,7 @@ namespace BattleShip
         {
             get
             {
-                return PlayerGrid1.AllDeployed;
+                return PlayerGrid.AllDeployed;
             }
         }
 
@@ -115,7 +115,7 @@ namespace BattleShip
             get
             {
                 // Check if all ships are destroyed... -1 for the none ship
-                return PlayerGrid1.ShipsKilled == Enum.GetValues(typeof(ShipName)).Length - 1;
+                return PlayerGrid.ShipsKilled == Enum.GetValues(typeof(ShipName)).Length - 1;
             }
         }
 
@@ -130,10 +130,11 @@ namespace BattleShip
         {
             get
             {
-                if (name == ShipName.None)
+                //Fix
+                //if (name == ShipName.None)
                     return null/* TODO Change to default(_) if this is not a reference type */;
 
-                return _Ships.Item[name];
+                //return _Ships.Item[name];
             }
         }
 
@@ -182,7 +183,8 @@ namespace BattleShip
             }
         }
 
-        public SeaGrid PlayerGrid1 { get; set; } = new SeaGrid(_Ships);
+        //Fix
+        //public SeaGrid PlayerGrid1 { get; set; } = new SeaGrid(_Ships);
 
         /// <summary>
         ///     ''' Makes it possible to enumerate over the ships the player

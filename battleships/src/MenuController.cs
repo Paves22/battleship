@@ -31,7 +31,8 @@ namespace BattleShip
         ///     ''' The menu structure for the game.
         ///     ''' </summary>
         ///     ''' <remarks>
-        ///     ''' These are the text captions for the menu items.
+        ///     ''' These are the text captions for the menu 
+        ///     s.
         ///     ''' </remarks>
         private readonly static string[][] _menuStructure = new[] { new string[] { "PLAY", "SETUP", "SCORES", "QUIT" }, new string[] { "RETURN", "SURRENDER", "QUIT" }, new string[] { "EASY", "MEDIUM", "HARD" } };
 

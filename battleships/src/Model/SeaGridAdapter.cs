@@ -16,7 +16,7 @@ namespace BattleShip
         // '' <param name="grid">the grid that needs to be adapted</param>
         public SeaGridAdapter(SeaGrid grid) {
             _MyGrid = grid;
-            _MyGrid.Changed += new EventHandler();// TODO: Warning!!!! NULL EXPRESSION DETECTED....);
+            //_MyGrid.Changed += new EventHandler();// TODO: Warning!!!! NULL EXPRESSION DETECTED....);
         }
 
         // '' <summary>
@@ -34,12 +34,15 @@ namespace BattleShip
         // '' <param name="x">tile x coordinate</param>
         // '' <param name="y">tile y coordinate</param>
         // '' <returns>a tile, either what it actually is, or if it was a ship then return a sea tile</returns>
-        public TileView this[int x, int y] {
-        }
 
-        EndPropertyImplementsISeaGrid.Changed;
-    //Endclass Unknown {
-    //}
+
+        //public TileView this[int x, int y] {
+        //}
+
+        //FIX:
+        //EndPropertyImplementsISeaGrid.Changed;
+        //Endclass Unknown {
+        //}
 
 
     // '' <summary>
@@ -62,8 +65,17 @@ namespace BattleShip
             }
         }
 
+        //Fix
+        //public TileView Item => ((ISeaGrid)_MyGrid).Item;
+        public TileView Item(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
+
         public AttackResult HitTile(int row, int col) {
             return _MyGrid.HitTile(row, col);
         }
+
+    
     }
 }

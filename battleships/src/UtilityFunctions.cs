@@ -143,13 +143,13 @@ namespace BattleShip
 
                     switch (grid.Item(row, col))
                     {
-                        case object _ when TileView.Ship:
+                        case TileView.Ship:
                             {
                                 draw = false;
                                 break;
                             }
 
-                        case object _ when TileView.Miss:
+                        case TileView.Miss:
                             {
                                 if (small)
                                     fillColor = SMALL_MISS;
@@ -158,7 +158,7 @@ namespace BattleShip
                                 break;
                             }
 
-                        case object _ when TileView.Hit:
+                        case TileView.Hit:
                             {
                                 if (small)
                                     fillColor = SMALL_HIT;
@@ -167,8 +167,7 @@ namespace BattleShip
                                 break;
                             }
 
-                        case object _ when TileView.Sea:
-                        case object _ when TileView.Ship:
+                        case TileView.Sea:
                             {
                                 if (small)
                                     fillColor = SMALL_SEA;
@@ -259,23 +258,23 @@ namespace BattleShip
         {
             switch (GameController.CurrentState)
             {
-                case object _ when GameState.ViewingMainMenu:
-                case object _ when GameState.ViewingGameMenu:
-                case object _ when GameState.AlteringSettings:
-                case object _ when GameState.ViewingHighScores:
+                case GameState.ViewingMainMenu:
+                case GameState.ViewingGameMenu:
+                case GameState.AlteringSettings:
+                case GameState.ViewingHighScores:
                     {
                         SwinGame.DrawBitmap(GameResources.GameImage("Menu"), 0, 0);
                         break;
                     }
 
-                case object _ when GameState.Discovering:
-                case object _ when GameState.EndingGame:
+                case GameState.Discovering:
+                case GameState.EndingGame:
                     {
                         SwinGame.DrawBitmap(GameResources.GameImage("Discovery"), 0, 0);
                         break;
                     }
 
-                case object _ when GameState.Deploying:
+                case GameState.Deploying:
                     {
                         SwinGame.DrawBitmap(GameResources.GameImage("Deploy"), 0, 0);
                         break;

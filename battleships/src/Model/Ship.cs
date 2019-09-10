@@ -90,7 +90,9 @@ namespace BattleShip
             _shipName = ship;
             _tiles = new List<Tile>();
             // gets the ship size from the enumarator
-            _sizeOfShip = _shipName;
+            
+            //Fix
+            //_sizeOfShip = _shipName;
         }
 
         // '' <summary>
@@ -132,11 +134,12 @@ namespace BattleShip
             }
         }
 
+        //Fix
         public bool IsDestroyed
         {
             get
             {
-                return;
+                return true;
             }
         }
 

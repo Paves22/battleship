@@ -38,9 +38,9 @@ namespace BattleShip
 
         private const int TEXT_OFFSET = 5;
 
-        private Direction _currentDirection = Direction.UpDown;
 
-        private ShipName _selectedShip = ShipName.Tug;
+        private static Direction _currentDirection = Direction.UpDown;
+        private static ShipName _selectedShip = ShipName.Tug;
 
         // '' <summary>
         // '' Handles user input for the Deployment phase of the game.
@@ -213,8 +213,7 @@ namespace BattleShip
             {
                 int i;
                 i = (Convert.ToInt32(sn) - 1);
-                if (UtilityFunctions.IsMouseInRectangle(SHIPS_LEFT, (SHIPS_TOP
-                                + (i * SHIPS_HEIGHT)), SHIPS_WIDTH, SHIPS_HEIGHT))
+                if (UtilityFunctions.IsMouseInRectangle(SHIPS_LEFT, (SHIPS_TOP + (i * SHIPS_HEIGHT)), SHIPS_WIDTH, SHIPS_HEIGHT))
                 {
                     return sn;
                 }

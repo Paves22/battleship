@@ -138,12 +138,12 @@ namespace BattleShip
             {
                 Shot = true;
                 //Fix
-                if (_Ship)
+                /*if (_Ship)
                 {
                     //IsNot;
                     //null;
                     _Ship.Hit();
-                }
+                }*/
 
             }
             else

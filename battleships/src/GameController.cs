@@ -23,7 +23,9 @@ namespace BattleShip
     /// ''' game.
 
     /// ''' </summary>
-    public static class GameController
+   
+    //Removed static
+    public class GameController
     {
         private static BattleShipsGame _theGame;
         private static Player _human;
@@ -32,6 +34,7 @@ namespace BattleShip
         private static Stack<GameState> _state = new Stack<GameState>();
 
         private static AIOption _aiSetting;
+        private static string Message;
 
         /// <summary>
         ///     ''' Returns the current state of the game, indicating which screen is
@@ -73,7 +76,8 @@ namespace BattleShip
             }
         }
         
-        public static GameController()
+        //Removed static
+        public GameController()
         {
             // bottom state will be quitting. If player exits main menu then the game is over
             _state.Push(GameState.Quitting);
@@ -99,13 +103,13 @@ namespace BattleShip
             // create the players
             switch (_aiSetting)
             {
-                case object _ when AIOption.Medium:
+                case AIOption.Medium:
                     {
                         _ai = new AIMediumPlayer(_theGame);
                         break;
                     }
 
-                case object _ when AIOption.Hard:
+                case AIOption.Hard:
                     {
                         _ai = new AIHardPlayer(_theGame);
                         break;
@@ -189,14 +193,14 @@ namespace BattleShip
 
             switch (result.Value)
             {
-                case object _ when ResultOfAttack.Destroyed:
+                case ResultOfAttack.Destroyed:
                     {
                         PlayHitSequence(result.Row, result.Column, isHuman);
                         Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
                         break;
                     }
 
-                case object _ when ResultOfAttack.GameOver:
+                case ResultOfAttack.GameOver:
                     {
                         PlayHitSequence(result.Row, result.Column, isHuman);
                         Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
@@ -214,19 +218,19 @@ namespace BattleShip
                         break;
                     }
 
-                case object _ when ResultOfAttack.Hit:
+                case ResultOfAttack.Hit:
                     {
                         PlayHitSequence(result.Row, result.Column, isHuman);
                         break;
                     }
 
-                case object _ when ResultOfAttack.Miss:
+                case ResultOfAttack.Miss:
                     {
                         PlayMissSequence(result.Row, result.Column, isHuman);
                         break;
                     }
 
-                case object _ when ResultOfAttack.ShotAlready:
+                case ResultOfAttack.ShotAlready:
                     {
                         Audio.PlaySoundEffect(GameResources.GameSound("Error"));
                         break;
@@ -291,14 +295,14 @@ namespace BattleShip
         {
             switch (result.Value)
             {
-                case object _ when ResultOfAttack.Miss:
+                case ResultOfAttack.Miss:
                     {
                         if (_theGame.Player == ComputerPlayer)
                             AIAttack();
                         break;
                     }
 
-                case object _ when ResultOfAttack.GameOver:
+                case ResultOfAttack.GameOver:
                     {
                         SwitchState(GameState.EndingGame);
                         break;
@@ -321,45 +325,45 @@ namespace BattleShip
 
             switch (CurrentState)
             {
-                case object _ when GameState.ViewingMainMenu:
+                case GameState.ViewingMainMenu:
                     {
                         MenuController.HandleMainMenuInput();
                         break;
                     }
 
-                case object _ when GameState.ViewingGameMenu:
+                case GameState.ViewingGameMenu:
                     {
                         MenuController.HandleGameMenuInput();
                         break;
                     }
 
-                case object _ when GameState.AlteringSettings:
+                case GameState.AlteringSettings:
                     {
                         MenuController.HandleSetupMenuInput();
                         break;
                     }
 
-                case object _ when GameState.Deploying:
+                case GameState.Deploying:
                     {
-                        MenuController.HandleDeploymentInput();
+                        DeploymentController.HandleDeploymentInput();
                         break;
                     }
 
-                case object _ when GameState.Discovering:
+                case GameState.Discovering:
                     {
-                        MenuController.HandleDiscoveryInput();
+                        DiscoveryController.HandleDiscoveryInput();
                         break;
                     }
 
-                case object _ when GameState.EndingGame:
+                case GameState.EndingGame:
                     {
-                        MenuController.HandleEndOfGameInput();
+                        EndingGameController.HandleEndOfGameInput();
                         break;
                     }
 
-                case object _ when GameState.ViewingHighScores:
+                case GameState.ViewingHighScores:
                     {
-                        MenuController.HandleHighScoreInput();
+                        HighScoreController.HandleHighScoreInput();
                         break;
                     }
             }
@@ -379,43 +383,43 @@ namespace BattleShip
 
             switch (CurrentState)
             {
-                case object _ when GameState.ViewingMainMenu:
+                case GameState.ViewingMainMenu:
                     {
                         MenuController.DrawMainMenu();
                         break;
                     }
 
-                case object _ when GameState.ViewingGameMenu:
+                case GameState.ViewingGameMenu:
                     {
                         MenuController.DrawGameMenu();
                         break;
                     }
 
-                case object _ when GameState.AlteringSettings:
+                case GameState.AlteringSettings:
                     {
                         MenuController.DrawSettings();
                         break;
                     }
 
-                case object _ when GameState.Deploying:
+                case GameState.Deploying:
                     {
                         DeploymentController.DrawDeployment();
                         break;
                     }
 
-                case object _ when GameState.Discovering:
+                case GameState.Discovering:
                     {
                         DiscoveryController.DrawDiscovery();
                         break;
                     }
 
-                case object _ when GameState.EndingGame:
+                case GameState.EndingGame:
                     {
                         EndingGameController.DrawEndOfGame();
                         break;
                     }
 
-                case object _ when GameState.ViewingHighScores:
+                case GameState.ViewingHighScores:
                     {
                         HighScoreController.DrawHighScores();
                         break;
