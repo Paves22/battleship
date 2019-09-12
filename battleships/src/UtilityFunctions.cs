@@ -250,18 +250,31 @@ static class UtilityFunctions
 
 		SwinGame.DrawFramerate(675, 585, GameResources.GameFont("CourierSmall"));
 	}
-
+    /// <summary>
+	/// Adds explosion at given square.
+	/// </summary>
+    /// <param name="row">Row of the square</param>
+    /// <param name="col">Column of the square</param>
 	public static void AddExplosion(int row, int col)
 	{
 		AddAnimation(row, col, "Splash");
 	}
-
+    /// <summary>
+	/// Adds splash at given square.
+	/// </summary>
+    /// <param name="row">Row of the square</param>
+    /// <param name="col">Column of the square</param>
 	public static void AddSplash(int row, int col)
 	{
 		AddAnimation(row, col, "Splash");
 	}
 
-
+    /// <summary>
+	/// Adds animation at given square.
+	/// </summary>
+    /// <param name="row">Row of the square</param>
+    /// <param name="col">Column of the square</param>
+    /// <param name="image">Animation to add</param>
 	private static List<Sprite> _Animations = new List<Sprite>();
 	private static void AddAnimation(int row, int col, string image)
 	{
@@ -281,7 +294,9 @@ static class UtilityFunctions
 		s.StartAnimation("splash");
 		_Animations.Add(s);
 	}
-
+    /// <summary>
+	/// Updates the animations List.
+	/// </summary>
 	public static void UpdateAnimations()
 	{
 		List<Sprite> ended = new List<Sprite>();
@@ -297,14 +312,18 @@ static class UtilityFunctions
 			SwinGame.FreeSprite(s);
 		}
 	}
-
+    /// <summary>
+	/// Draws the animations in the animations List.
+	/// </summary>
 	public static void DrawAnimations()
 	{
 		foreach (Sprite s in _Animations) {
 			SwinGame.DrawSprite(s);
 		}
 	}
-
+    /// <summary>
+	/// Draws the animations sequence.
+	/// </summary>
 	public static void DrawAnimationSequence()
 	{
 		int i = 0;
