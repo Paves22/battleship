@@ -1,0 +1,9 @@
+C:\Users\Adam\Desktop\Folders\uni\Yr 1 Sem 2\Development Project 1 (Tools & Practices)\code\battleships\battleships\obj\x86\Debug\battleship.csprojAssemblyReference.cache
+C:\Users\Adam\Desktop\Folders\uni\Yr 1 Sem 2\Development Project 1 (Tools & Practices)\code\battleships\battleships\obj\x86\Debug\battleship.csproj.CoreCompileInputs.cache
+C:\Users\Adam\Desktop\Folders\uni\Yr 1 Sem 2\Development Project 1 (Tools & Practices)\code\battleships\battleships\bin\Debug\lib\SwinGame.dll.mdb
+C:\Users\Adam\Desktop\Folders\uni\Yr 1 Sem 2\Development Project 1 (Tools & Practices)\code\battleships\battleships\bin\Debug\WindowsApplication.exe
+C:\Users\Adam\Desktop\Folders\uni\Yr 1 Sem 2\Development Project 1 (Tools & Practices)\code\battleships\battleships\bin\Debug\WindowsApplication.pdb
+C:\Users\Adam\Desktop\Folders\uni\Yr 1 Sem 2\Development Project 1 (Tools & Practices)\code\battleships\battleships\bin\Debug\SwinGame.dll
+C:\Users\Adam\Desktop\Folders\uni\Yr 1 Sem 2\Development Project 1 (Tools & Practices)\code\battleships\battleships\obj\x86\Debug\battleship.csproj.CopyComplete
+C:\Users\Adam\Desktop\Folders\uni\Yr 1 Sem 2\Development Project 1 (Tools & Practices)\code\battleships\battleships\obj\x86\Debug\WindowsApplication.exe
+C:\Users\Adam\Desktop\Folders\uni\Yr 1 Sem 2\Development Project 1 (Tools & Practices)\code\battleships\battleships\obj\x86\Debug\WindowsApplication.pdb
