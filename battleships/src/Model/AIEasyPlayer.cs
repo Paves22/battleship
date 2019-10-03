@@ -21,6 +21,10 @@ public class AIEasyPlayer : AIPlayer
 
     private AIStates _CurrentState = AIStates.Searching;
 
+    public AIEasyPlayer(BattleShipsGame controller) : base(controller)
+    {
+    }
+
     private Stack<Location> _Targets = new Stack<Location>();
     public AIEasyPlayer(BattleShipsGame controller) : base(controller)
     {
