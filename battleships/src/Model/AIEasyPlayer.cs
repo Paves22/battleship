@@ -24,22 +24,10 @@ namespace battleships
         }
 
         private AIStates _CurrentState = AIStates.Searching;
-
-<<<<<<< HEAD
         private Stack<Location> _Targets = new Stack<Location>();
         public AIEasyPlayer(BattleShipsGame controller) : base(controller)
         {
         }
-=======
-    public AIEasyPlayer(BattleShipsGame controller) : base(controller)
-    {
-    }
-
-    private Stack<Location> _Targets = new Stack<Location>();
-    public AIEasyPlayer(BattleShipsGame controller) : base(controller)
-    {
-    }
->>>>>>> 35d52a8d36f98f28eaaa0df94f385587e733a006
 
         /// <summary>
         /// GenerateCoordinates should generate random shooting coordinates
